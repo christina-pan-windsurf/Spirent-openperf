@@ -30,6 +30,14 @@ paths:
             type: array
             items:
               $ref: "#/definitions/PacketAnalyzer"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     post:
       operationId: CreatePacketAnalyzer
       tags:
@@ -52,6 +60,22 @@ paths:
               type: string
           schema:
             $ref: "#/definitions/PacketAnalyzer"
+        400:
+          description: Bad Request - Invalid input or validation error
+          schema:
+            $ref: "#/definitions/ValidationErrorResponse"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     delete:
       operationId: DeletePacketAnalyzers
       tags:
@@ -62,6 +86,14 @@ paths:
       responses:
         204:
           description: No Content
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/{id}:
     get:
@@ -77,6 +109,18 @@ paths:
           description: Success
           schema:
             $ref: "#/definitions/PacketAnalyzer"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     delete:
       operationId: DeletePacketAnalyzer
       tags:
@@ -90,6 +134,18 @@ paths:
       responses:
         204:
           description: No Content
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/{id}/reset:
     post:
@@ -114,6 +170,18 @@ paths:
               type: string
           schema:
             $ref: "#/definitions/PacketAnalyzerResult"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/{id}/start:
     post:
@@ -135,6 +203,18 @@ paths:
               type: string
           schema:
             $ref: "#/definitions/PacketAnalyzerResult"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/{id}/stop:
     post:
@@ -148,6 +228,18 @@ paths:
       responses:
         204:
           description: No Content
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/x/bulk-create:
     post:
@@ -192,6 +284,22 @@ paths:
                 minItems: 1
             required:
               - items
+        400:
+          description: Bad Request - Invalid input or validation error
+          schema:
+            $ref: "#/definitions/ValidationErrorResponse"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/x/bulk-delete:
     post:
@@ -265,6 +373,22 @@ paths:
                 minItems: 1
             required:
               - items
+        400:
+          description: Bad Request - Invalid input or validation error
+          schema:
+            $ref: "#/definitions/ValidationErrorResponse"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzers/x/bulk-stop:
     post:
@@ -294,6 +418,22 @@ paths:
       responses:
         204:
           description: No Content
+        400:
+          description: Bad Request - Invalid input or validation error
+          schema:
+            $ref: "#/definitions/ValidationErrorResponse"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzer-results:
     get:
@@ -322,6 +462,14 @@ paths:
             type: array
             items:
               $ref: "#/definitions/PacketAnalyzerResult"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     delete:
       operationId: DeletePacketAnalyzerResults
       tags:
@@ -331,6 +479,14 @@ paths:
       responses:
         204:
           description: No Content
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /analyzer-results/{id}:
     get:
@@ -346,6 +502,18 @@ paths:
           description: Success
           schema:
             $ref: "#/definitions/PacketAnalyzerResult"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
     delete:
       operationId: DeletePacketAnalyzerResult
       tags:
@@ -387,6 +555,14 @@ paths:
             type: array
             items:
               $ref: "#/definitions/RxFlow"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /rx-flows/{id}:
     get:
@@ -402,6 +578,18 @@ paths:
           description: Success
           schema:
             $ref: "#/definitions/RxFlow"
+        404:
+          description: Not Found - Invalid resource identifier
+          schema:
+            $ref: "#/definitions/NotFoundErrorResponse"
+        405:
+          description: Method Not Allowed - PacketIO module not enabled
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        500:
+          description: Internal Server Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
 definitions:
   PacketAnalyzer:
@@ -833,3 +1021,39 @@ definitions:
       - analyzer_result_id
       - counters
       - digests
+
+  ErrorResponse:
+    type: object
+    description: Error response
+    properties:
+      code:
+        type: integer
+        description: Error code
+      message:
+        type: string
+        description: Error message
+    required:
+      - message
+
+  ValidationErrorResponse:
+    type: object
+    description: Validation error response
+    properties:
+      code:
+        type: integer
+        description: Error code
+      message:
+        type: string
+        description: Error message
+    required:
+      - message
+
+  NotFoundErrorResponse:
+    type: object
+    description: Resource not found error response
+    properties:
+      message:
+        type: string
+        description: Error message
+    required:
+      - message
